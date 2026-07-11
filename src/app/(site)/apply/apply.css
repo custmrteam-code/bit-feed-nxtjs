@@ -1,0 +1,50 @@
+/* ============================================================================
+   Reporter application form styles — ported from profile pages/apply.css.
+   Loaded only on the /apply route; scoped under .apply-page.
+   ============================================================================ */
+:root {
+  --color-ap-input-bg: #f2f2f2;
+  --color-ap-input-focus: #e6e6e6;
+  --color-ap-placeholder: #aaa;
+  --color-ap-drop-text: #777;
+  --color-ap-btn-red: #b93b3b;
+  --color-ap-btn-disabled: #ccc;
+}
+
+.apply-page { background-color: #fff; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #333; }
+.apply-page * { box-sizing: border-box; }
+
+.page-header { display: flex; align-items: center; justify-content: center; position: relative; padding: 20px; border-bottom: 1px solid #eee; margin-bottom: 40px; }
+.page-header h1 { font-size: 1.25rem; font-weight: 350; margin: 0; letter-spacing: 0.5px; }
+.back-btn { position: absolute; left: 20px; color: #000; display: flex; align-items: center; transition: opacity 0.2s; cursor: pointer; background: none; border: none; }
+
+.form-container { max-width: 700px; margin: 0 auto; padding: 0 20px 60px; }
+.sub-text { text-align: center; font-size: 0.95rem; color: #333; margin-bottom: 4.4rem; line-height: 1.5; font-weight: 300; font-family: "Roboto", sans-serif; }
+
+.form-group { margin-bottom: 25px; }
+.apply-page label { display: block; margin-bottom: 12px; font-size: 0.95rem; font-weight: 400; color: #222; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.form-input { width: 100%; padding: 16px; background-color: var(--color-ap-input-bg); border: none; border-radius: 6px; font-family: inherit; font-size: 0.9rem; color: #333; box-sizing: border-box; outline: none; margin-bottom: 15px; }
+.form-input:focus { background-color: var(--color-ap-input-focus); }
+.form-input::placeholder { color: var(--color-ap-placeholder); }
+
+.upload-row { display: flex; gap: 75px; margin-bottom: 50px; }
+.upload-col { flex: 1; }
+.file-drop-area { width: 100%; background-color: var(--color-ap-input-bg); border-radius: 8px; padding: 30px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; position: relative; height: 170px; box-sizing: border-box; overflow: hidden; transition: background 0.2s; }
+.file-drop-area:hover { background-color: var(--color-ap-input-focus); }
+.drop-content { display: flex; flex-direction: column; align-items: center; text-align: center; pointer-events: none; }
+.upload-icon { color: #999; margin-bottom: 10px; }
+.drop-text { font-size: 0.8rem; color: var(--color-ap-drop-text); margin-bottom: 4px; }
+.drop-subtext { font-size: 0.65rem; color: var(--color-ap-placeholder); }
+
+.preview-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; padding: 5px; background: var(--color-ap-input-bg); }
+.preview-text { position: absolute; background: var(--color-ap-input-bg); padding: 10px; font-size: 0.85rem; color: #333; font-weight: 500; }
+
+.submit-btn { width: 100%; padding: 16px; background-color: var(--color-ap-btn-red); color: #fff; font-size: 1rem; font-weight: 400; border: none; border-radius: 8px; cursor: pointer; margin-top: 3rem; transition: opacity 0.2s; }
+.submit-btn:hover { opacity: 0.9; }
+.submit-btn:disabled { background-color: var(--color-ap-btn-disabled); cursor: not-allowed; }
+
+.apply-page .hidden { display: none !important; }
+
+@media (max-width: 600px) {
+  .upload-row { flex-direction: column; gap: 25px; }
+}

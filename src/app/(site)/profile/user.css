@@ -1,0 +1,57 @@
+/* ============================================================================
+   User profile styles — ported from profile pages/user.css. Loaded only on the
+   /profile route; scoped under .user-page so the global reset doesn't touch the
+   shared header/footer.
+   ============================================================================ */
+:root {
+  --color-up-text-body: #444;
+  --color-up-text-muted: #999;
+  --color-up-text-dark: #333;
+  --color-up-red: #d73634;
+  --color-up-red-date: #e74c3c;
+  --color-up-red-hover: #e95454;
+  --color-up-red-deep: #c0392b;
+  --color-up-border: #ccc;
+  --color-up-avatar-bg: #e8e8e8;
+}
+
+.user-page { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+.user-page * { box-sizing: border-box; }
+
+.container { width: 60%; margin: 0 auto; padding: 60px 0 40px; }
+.greeting { font-size: 36px; font-weight: 400; margin-bottom: 50px; color: #000; text-transform: capitalize; }
+.section-title { font-size: 18px; font-weight: 500; color: #000; margin-bottom: 15px; }
+.header-line { border: none; border-top: 2px solid #000; margin-bottom: 40px; }
+
+.content-wrapper { display: flex; gap: 80px; }
+.main-content { flex: 2; min-width: 0; }
+.user-sidebar { flex: 1; min-width: 280px; }
+.sticky-sidebar { position: sticky; top: 100px; }
+.sticky-sidebar h3 { font-size: 18px; font-weight: 600; margin-bottom: 30px; color: #000; }
+
+.user-page .article-card { display: block; margin: 0 0 3rem; text-decoration: none; color: inherit; cursor: pointer; }
+.user-page .article-card h3 { font-family: "Circular Std", "Montserrat", sans-serif; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 1.27rem; line-height: 1.4; color: #000; }
+.user-page .date { margin: 0.2rem 0 0.6rem; color: var(--color-up-red-date); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.user-page .date + p { font-family: "Roboto", sans-serif; font-size: 1rem; color: var(--color-up-text-body); line-height: 1.6; }
+.article-separator { border: none; border-top: 1px solid var(--color-up-border); margin-bottom: 3rem; }
+.article-separator:last-of-type { display: none; }
+
+.line-with-text { display: flex; align-items: center; text-align: center; color: red; font-size: 1.2rem; width: 350px; margin: 5rem auto 0; }
+.line-with-text::before, .line-with-text::after { content: ""; flex: 1; border-bottom: 1px solid var(--color-up-border); margin: 0 1rem; }
+.user-page .link1 { text-decoration: none; color: var(--color-up-red); font-weight: 300; font-family: "Roboto", sans-serif; cursor: pointer; }
+
+.sidebar-user-item { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; }
+.see-more { color: var(--color-up-red-date); text-align: center; margin-top: 25px; cursor: pointer; font-size: 14px; transition: color 0.3s ease; }
+.see-more:hover { color: var(--color-up-red-deep); }
+.empty-state { text-align: center; padding: 40px 0; color: var(--color-up-text-muted); }
+
+.user-page .follow-btn { background-color: transparent; border: 1px solid #aaa; border-radius: 20px; padding: 4px 14px; font-size: 0.85rem; font-weight: 500; color: var(--color-up-text-dark); cursor: pointer; transition: all 0.2s ease; font-family: inherit; min-width: 80px; text-align: center; }
+.user-page .follow-btn:hover { background-color: var(--color-up-red-hover); color: #fff; border-color: var(--color-up-red-hover); }
+.user-page .follow-btn.following { background-color: #000; color: #fff; border-color: #000; }
+.user-page .follow-btn.following:hover { background-color: var(--color-up-text-dark); color: #fff; border-color: var(--color-up-text-dark); opacity: 0.9; }
+
+@media (max-width: 768px) {
+  .container { width: 90%; }
+  .content-wrapper { flex-direction: column-reverse; }
+  .user-sidebar { width: 100%; border-top: 1px solid #eee; padding-top: 30px; }
+}

@@ -1,0 +1,81 @@
+/* ============================================================================
+   Multi-article listing styles — ported from articles/multi-article.css.
+   Loaded only on the /articles route.
+   ============================================================================ */
+:root {
+  --color-red: #d73634;
+  --color-red-active: #a93836;
+  --color-border: #ccc;
+  --color-page-inactive: #e5e7eb;
+  --color-page-inactive-hover: #d1d5db;
+  --color-page-text: #6b7280;
+  --color-page-arrow: #9ca3af;
+  --color-page-arrow-hover: #4b5563;
+  --color-page-placeholder: #f3f4f6;
+  --color-skeleton-base: #f0f0f0;
+  --color-skeleton-shine: #e0e0e0;
+  --font-body: "Roboto", sans-serif;
+  --font-heading: "Circular Std", "Montserrat", sans-serif;
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.2s ease-in-out;
+}
+
+.ma-list a { text-decoration: none; color: #000; }
+.text-red { color: var(--color-red); }
+.ma-list .date, .ma-list .result-date { text-transform: uppercase; }
+
+.ma-main { max-width: 50%; margin: 0 auto; padding-top: 80px; }
+.topic { font-family: var(--font-body); font-weight: 200; font-size: 1.4em; }
+.Line1 { position: absolute; border: none; border-top: 0.5px solid var(--color-border); width: 70vw; left: 15vw; }
+
+.articles-container { margin: 6rem 0 2rem; }
+.article-card { display: block; margin: 3rem 0; }
+.article-card h3 { font-family: var(--font-heading); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 1.27rem; }
+.ma-list .date { margin: 0.2rem 0 0.6rem; }
+.date + p { font-family: var(--font-body); font-size: 1rem; }
+.article-card + hr { border: none; border-top: 1px solid var(--color-border); }
+.highlight-red { color: var(--color-red); font-weight: bold; }
+
+.pagination-bar { width: 100%; display: flex; justify-content: center; padding: 2rem 0 3rem; background: linear-gradient(to top, #f9fafb 80%, transparent); }
+.pagination-wrapper { display: flex; align-items: center; gap: 1rem; user-select: none; }
+.arrow-btn { background: none; border: none; cursor: pointer; color: var(--color-page-arrow); padding: 0.5rem; display: flex; align-items: center; justify-content: center; transition: color var(--transition-fast); }
+.arrow-btn:hover { color: var(--color-page-arrow-hover); }
+.arrow-btn svg { width: 12px; height: 12px; fill: currentColor; }
+#pages-container { display: flex; align-items: center; gap: 0.75rem; }
+.page-circle { width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 500; border: none; cursor: pointer; transition: all var(--transition-base); font-family: var(--font-body); font-size: 1rem; }
+.page-circle.inactive { background-color: var(--color-page-inactive); color: var(--color-page-text); }
+.page-circle.inactive:hover { background-color: var(--color-page-inactive-hover); }
+.page-circle.active { width: 3.5rem; height: 3.5rem; background-color: var(--color-red-active); color: #fff; font-size: 1.25rem; font-weight: 700; z-index: 2; transform: scale(1.1); }
+.page-circle.placeholder { background-color: var(--color-page-placeholder); cursor: default; }
+
+@keyframes shimmer { 0% { background-position: -1000px 0; } 100% { background-position: 1000px 0; } }
+.skeleton { background: var(--color-skeleton-base); background-image: linear-gradient(to right, var(--color-skeleton-base) 0%, var(--color-skeleton-shine) 20%, var(--color-skeleton-base) 40%, var(--color-skeleton-base) 100%); background-repeat: no-repeat; background-size: 1000px 100%; display: block; position: relative; animation: shimmer 1.2s infinite linear forwards; border-radius: 4px; }
+.sk-card { display: block; margin: 3rem 0; }
+.sk-title { height: 24px; width: 60%; margin-bottom: 0.8rem; }
+.sk-date { height: 14px; width: 100px; margin-bottom: 1rem; }
+.sk-summary { height: 16px; width: 100%; margin-bottom: 10px; }
+.sk-summary.short { width: 80%; }
+.sk-hr { height: 1px; background-color: var(--color-border); margin: 2rem 0; width: 100%; border: none; }
+.fade-in { animation: fadeIn 0.5s ease-in; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 768px) {
+  .ma-main { max-width: 90%; margin: 2rem auto 1rem; padding: 70px 1rem 1rem; }
+  .pagination-bar { padding: 1.5rem 0; }
+  .pagination-wrapper { gap: 0.75rem; }
+  .page-circle { width: 2.25rem; height: 2.25rem; }
+  .page-circle.active { width: 3rem; height: 3rem; font-size: 1.1rem; }
+}
+@media (max-width: 550px) {
+  .Line1 { width: 100vw; left: 0; }
+  .topic { font-size: 0.95rem; }
+}
+@media (max-width: 480px) {
+  .article-card h3 { font-size: 1.2rem; }
+  .pagination-bar { padding: 1rem 0 1.25rem; background: linear-gradient(to top, #f9fafb 90%, transparent); }
+  .pagination-wrapper { gap: 0.5rem; }
+  #pages-container { gap: 0.25rem; }
+  .page-circle { width: 2rem; height: 2rem; font-size: 0.9rem; }
+  .page-circle.active { width: 2.75rem; height: 2.75rem; font-size: 1rem; transform: scale(1.05); }
+  .arrow-btn { padding: 0.25rem; }
+}

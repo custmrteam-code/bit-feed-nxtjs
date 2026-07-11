@@ -1,0 +1,16 @@
+/* Privacy policy styles — ported from others/privacy-policy.html. Route-scoped. */
+.privacy-page { font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; color: #111; line-height: 1.6; }
+.privacy-page .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
+.last-updated-box { background-color: #f3f3f3; padding: 12px; text-align: center; border-radius: 4px; font-size: 0.95rem; color: #333; margin-bottom: 40px; }
+.privacy-page .section-title { font-size: 1.5rem; font-weight: 400; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #eee; color: #111; }
+.privacy-page h3 { font-size: 1.1rem; font-weight: 600; margin-top: 25px; margin-bottom: 10px; color: #000; }
+.privacy-page p, .privacy-page li { font-size: 1rem; color: #333; margin-bottom: 15px; font-weight: 400; letter-spacing: 0.1px; }
+.privacy-page ul { margin-left: 20px; margin-bottom: 20px; }
+.privacy-page li { margin-bottom: 8px; }
+.important-box { border: 2px solid #c94848; background-color: #fff; padding: 20px; border-radius: 10px; margin: 25px 0; }
+.important-box p { margin-bottom: 0; font-size: 0.95rem; line-height: 1.5; }
+.red-label { color: #c62828; font-weight: 600; }
+.privacy-page .container a { color: #2563eb; }
+.privacy-page .container a:hover { text-decoration: underline; }
+.privacy-footer { text-align: center; padding: 40px 0; color: #888; font-size: 0.85rem; border-top: 1px solid #f5f5f5; margin-top: 60px; }
+@media (max-width: 600px) { .privacy-page .container { padding: 20px; } .privacy-page .section-title { font-size: 1.3rem; } }

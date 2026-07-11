@@ -1,0 +1,12 @@
+/* "Under development" page — ported from others/x-error.html. Route-scoped. */
+.xerror-main { min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #fff; font-family: sans-serif; }
+.xerror-cat { display: flex; align-items: center; justify-content: center; position: relative; }
+.catbody { width: 80px; }
+.tail { position: absolute; width: 17px; top: 50%; animation: tail 0.5s ease-in infinite alternate-reverse; transform-origin: top; }
+@keyframes tail { 0% { transform: rotateZ(60deg); } 50% { transform: rotateZ(0deg); } 100% { transform: rotateZ(-20deg); } }
+.text7 { display: flex; flex-direction: column; position: absolute; width: 50px; margin: 0 0 100px 120px; }
+.zzz, .bigzzz { color: black; font-weight: 700; animation: zzz 2s linear infinite; }
+.zzz { font-size: 15px; }
+.bigzzz { font-size: 25px; margin-left: 10px; animation-duration: 2.3s; }
+@keyframes zzz { 0%, 100% { color: transparent; } 50% { color: black; } }
+.xerror-main h3 { margin-top: 20px; font-size: 1.2rem; color: #333; text-align: center; }
