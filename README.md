@@ -82,3 +82,4 @@ asset-cache headers are configured in `next.config.ts`.
 - Article `status` is `"active"` and user/author docs are keyed by **email**
   (the live data model, which differs from the legacy README).
 # bit-feed-nxtjs
+# bit-feed-nxtjs
